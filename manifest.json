@@ -1,0 +1,47 @@
+{
+  "description": "",
+  "manifest_version": 2,
+  "name": "geofinder",
+  "version": "1.0",
+  "icons": {
+    "48": "icons/logo.2.png"
+  },
+  "permissions": [
+    "activeTab",
+    "storage",
+    "tabs",
+    "webNavigation",
+    "webRequest",
+    "*://open.mapquestapi.com/*",
+    "*://maps.googleapis.com/maps/api/geocode/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://maps.google.com/*",
+        "*://*.google.com/maps*",
+        "*://open.mapquestapi.com/*"
+      ],
+      "js": ["content_scripts/geofinder.js"]
+    }
+  ],
+  "browser_action": {
+    "default_icon": "icons/logo.2.png",
+    "theme_icons": [{
+        "light": "icons/logo-light.2.png",
+        "dark": "icons/logo.2.png",
+        "size": 32
+    }],
+    "default_title": "Geofinder",
+    "default_popup": "popup/geofinder.html"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "nick@bull.dev",
+      "strict_min_version": "42.0"
+    }
+  },
+  "web_accessible_resources": [
+    "beasts/*.jpg"
+  ]
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap" rel="stylesheet">     
+    <link rel="stylesheet" href="geofinder.css">
+
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Geofinder for Google Maps</h4>
+
+      <div class="options--container">
+
+        <label for="options--is-active" class="checkbox--container">
+          Activate extension
+          <input 
+            id="options--is-active"
+            class="options--is-active checkbox"
+            name="options--is-active" 
+            type="checkbox">
+          <span class="checkbox--checkmark"></span>
+        </label>
+ 
+        <hr />
+
+        <div class="options--timer">
+          <label 
+            for="options--is-timed"
+            class="checkbox--container"
+            onclick="handleIsTimedCheckboxChange(this)"
+          >
+            <input 
+              id="options--is-timed"
+              class="options--is-timed"
+              name="options--is-timed checkbox"
+              type="checkbox">
+            <span class="checkbox--checkmark"></span>
+            Timed rounds
+          </label>
+
+          <label 
+            for="options--time-limit"
+            class="options--time-limit-container input--number--container"
+          >
+            Time limit (seconds)
+            <input 
+              id="options--time-limit"
+              class="input--textbox options--time-limit input--number"
+              name="options--time-limit" 
+              type="number"
+              min="10"
+              max="600"
+              step="1"
+            >
+          </label>
+        </div>
+
+        <hr />
+
+        <h3>api type</h3>
+
+        <div class="options--api-type radio--container">
+          <label class="radio--button">Google Geocoding
+            <input
+              class="radio--input"
+              type="radio"
+              name="radio"
+              option="google"
+            >
+            <span class="radio--checkmark"></span>
+          </label>
+          <label class="radio--button">Mapquest
+            <input
+              class="radio--input"
+              type="radio"
+              name="radio"
+              option="mapquest"
+            >
+            <span class="radio--checkmark"></span>
+          </label>
+        </div>
+
+        <h3>
+          api key
+          <div class="options--api-key-validation-spinner spinner rotating"></div>
+          <p class="options--api-key-validation-message"></p>
+        </h3>
+
+        <input class="options--api-key input--textbox" type="password">
+        <div class="options--api-key-validation">
+        </div> 
+      </div>
+    </div>
+
+    <script src="geofinder-options.js"></script>
+  </body>
+</html>
+
